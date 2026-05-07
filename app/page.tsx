@@ -15,7 +15,7 @@ export default function Home() {
               { name: "Kasa Anahtarı", price: "25 TL", desc: "Efsanevi eşyalar şansı." },
               { name: "Coin Paketi", price: "50 TL", desc: "10.000 Oyun içi coin." }
             ].map((item, i) => (
-              <div key={i} className="p-8 rounded-[2rem] bg-black/40 border border-white/10 backdrop-blur-xl hover:border-blue-500/50 transition-all group">
+              <div key={i} className="p-8 rounded-[2rem] bg-black/60 border border-white/10 backdrop-blur-xl hover:border-blue-500/50 transition-all group">
                 <h3 className="text-xl font-bold group-hover:text-blue-400 transition-colors">{item.name}</h3>
                 <p className="text-gray-400 text-sm my-4">{item.desc}</p>
                 <div className="text-2xl font-black text-white mb-4">{item.price}</div>
@@ -27,9 +27,9 @@ export default function Home() {
       case 'wiki':
         return (
           <div className="max-w-2xl mx-auto space-y-4 animate-in slide-in-from-bottom-8 duration-500 text-left">
-            <h2 className="text-4xl font-black mb-8 text-center uppercase tracking-tighter">Sunucu Rehberi</h2>
+            <h2 className="text-4xl font-black mb-8 text-center uppercase tracking-tighter text-white">Sunucu Rehberi</h2>
             {["Kasaba Kurulumu", "Ekonomi Rehberi", "Irk Yetenekleri"].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md hover:bg-white/5 cursor-pointer transition-all">
+              <div key={i} className="p-6 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-md hover:bg-white/5 cursor-pointer transition-all">
                 <div className="font-bold text-lg text-blue-400">{item}</div>
                 <div className="text-gray-400 text-sm mt-1">Detaylı rehber içeriği yakında burada olacak.</div>
               </div>
@@ -38,23 +38,23 @@ export default function Home() {
         );
       case 'destek':
         return (
-          <div className="max-w-md mx-auto p-8 rounded-[2.5rem] bg-black/40 border border-white/10 backdrop-blur-xl animate-in fade-in duration-500">
+          <div className="max-w-md mx-auto p-8 rounded-[2.5rem] bg-black/60 border border-white/10 backdrop-blur-xl animate-in fade-in duration-500">
             <h2 className="text-3xl font-black mb-6 uppercase tracking-tighter text-blue-400">Destek Talebi</h2>
-            <div className="space-y-4">
-              <input type="text" placeholder="Kullanıcı Adın" className="w-full p-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-blue-600 transition-all" />
-              <textarea placeholder="Sorununu yaz..." rows={4} className="w-full p-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-blue-600 transition-all"></textarea>
-              <button className="w-full py-4 bg-blue-600 font-black rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all">GÖNDER</button>
+            <div className="space-y-4 text-left">
+              <input type="text" placeholder="Kullanıcı Adın" className="w-full p-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-blue-600 text-white transition-all" />
+              <textarea placeholder="Sorununu yaz..." rows={4} className="w-full p-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-blue-600 text-white transition-all"></textarea>
+              <button className="w-full py-4 bg-blue-600 font-black rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all text-white">GÖNDER</button>
             </div>
           </div>
         );
       case 'profil':
         return (
-          <div className="max-w-md mx-auto p-10 rounded-[3rem] bg-gradient-to-br from-blue-600/20 to-black/60 border border-white/10 backdrop-blur-2xl animate-in zoom-in duration-500 text-center">
+          <div className="max-w-md mx-auto p-10 rounded-[3rem] bg-gradient-to-br from-blue-600/20 to-black/80 border border-white/10 backdrop-blur-2xl animate-in zoom-in duration-500 text-center">
             <div className="relative w-24 h-24 mx-auto mb-6">
                <div className="absolute inset-0 bg-blue-500 blur-2xl opacity-50 animate-pulse"></div>
                <div className="relative w-full h-full bg-white text-black rounded-full flex items-center justify-center text-4xl font-black">M</div>
             </div>
-            <h2 className="text-3xl font-black tracking-tighter uppercase">MELIODAS_ROOT</h2>
+            <h2 className="text-3xl font-black tracking-tighter uppercase text-white">MELIODAS_ROOT</h2>
             <p className="text-blue-400 font-bold text-sm tracking-[0.3em] mt-2 mb-8 uppercase">Kurucu</p>
             <div className="grid grid-cols-2 gap-4">
                <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
@@ -95,16 +95,16 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
-              <div className="p-10 rounded-[2.5rem] bg-black/40 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
-                <h3 className="text-2xl font-black mb-4 uppercase italic group-hover:text-blue-400 transition-colors">Towny</h3>
+              <div className="p-10 rounded-[2.5rem] bg-black/60 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
+                <h3 className="text-2xl font-black mb-4 uppercase italic group-hover:text-blue-400 transition-colors text-white">Towny</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">Kasabanı kur, sınırlarını genişlet ve büyük savaşlara hazırlan.</p>
               </div>
-              <div className="p-10 rounded-[2.5rem] bg-black/40 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
+              <div className="p-10 rounded-[2.5rem] bg-black/60 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
                 <h3 className="text-2xl font-black mb-4 uppercase italic text-blue-500 group-hover:text-blue-300">Özel Irklar</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">Seçtiğin ırka ait büyüleri ve pasif yetenekleri keşfet.</p>
               </div>
-              <div className="p-10 rounded-[2.5rem] bg-black/40 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
-                <h3 className="text-2xl font-black mb-4 uppercase italic group-hover:text-blue-400 transition-colors">Ekonomi</h3>
+              <div className="p-10 rounded-[2.5rem] bg-black/60 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
+                <h3 className="text-2xl font-black mb-4 uppercase italic group-hover:text-blue-400 transition-colors text-white">Ekonomi</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">Tamamen oyuncu takasına dayalı adil ve dinamik pazar sistemi.</p>
               </div>
             </div>
@@ -114,24 +114,23 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white p-6 font-sans relative flex flex-col items-center overflow-x-hidden">
-      {/* Uzay Arka Planı - Inline Style ile Garantiye Alındı */}
+    <main className="min-h-screen bg-[#050505] text-white p-6 relative flex flex-col items-center overflow-x-hidden">
+      {/* Arka Plan Görseli - Doğrudan Style ile bağlandı */}
       <div className="fixed inset-0 pointer-events-none -z-10">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-screen animate-pulse"
+          className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-screen animate-pulse"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000')" }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(37,99,235,0.15),_transparent_50%)]"></div>
       </div>
 
-      <nav className="fixed top-8 flex flex-wrap justify-center gap-2 p-2 rounded-2xl bg-black/20 border border-white/5 backdrop-blur-xl z-50">
+      <nav className="fixed top-8 flex flex-wrap justify-center gap-2 p-2 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-xl z-50">
         {['home', 'market', 'wiki', 'destek', 'profil'].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`px-6 py-3 rounded-xl text-[10px] md:text-xs font-black uppercase tracking-widest transition-all ${
-              activeTab === tab ? 'bg-white text-black' : 'text-gray-500 hover:text-white'
+              activeTab === tab ? 'bg-white text-black' : 'text-gray-400 hover:text-white'
             }`}
           >
             {tab === 'home' ? 'Ana Sayfa' : tab}
@@ -139,7 +138,7 @@ export default function Home() {
         ))}
       </nav>
 
-      <div className="mt-40 w-full max-w-6xl text-center">
+      <div className="mt-40 w-full max-w-6xl text-center relative z-10">
         {renderContent()}
       </div>
 
