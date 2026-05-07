@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @layer base {
-  :root {
-    --background: #050505;
-    --foreground: #ffffff;
-  }
-
   body {
     background-color: #050505 !important;
-    color: white;
+    color: #ffffff;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 }
 
-* {
-  box-sizing: border-box;
+/* Scrollbar'ı melonya stili gibi gizleyelim veya güzelleştirelim */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e40af;
+  border-radius: 10px;
 }

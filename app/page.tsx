@@ -5,108 +5,69 @@ import { useState } from 'react';
 export default function Home() {
   const [activeTab, setActiveTab] = useState('home');
 
+  const navItems = [
+    { id: 'home', label: 'ANA SAYFA' },
+    { id: 'market', label: 'MAĞAZA' },
+    { id: 'wiki', label: 'WIKIPEDIA' },
+    { id: 'destek', label: 'DESTEK' },
+  ];
+
   const renderContent = () => {
     switch (activeTab) {
       case 'market':
         return (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in fade-in zoom-in duration-500">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {[
-              { name: "VIP Üyelik", price: "100 TL", desc: "Özel yetenekler ve kozmetikler." },
-              { name: "Kasa Anahtarı", price: "25 TL", desc: "Efsanevi eşyalar şansı." },
-              { name: "Coin Paketi", price: "50 TL", desc: "10.000 Oyun içi coin." }
-            ].map((item, i) => (
-              <div key={i} className="p-8 rounded-[2rem] bg-black/60 border border-white/10 backdrop-blur-xl hover:border-blue-500/50 transition-all group">
-                <h3 className="text-xl font-bold group-hover:text-blue-400 transition-colors">{item.name}</h3>
-                <p className="text-gray-400 text-sm my-4">{item.desc}</p>
-                <div className="text-2xl font-black text-white mb-4">{item.price}</div>
-                <button className="w-full py-3 bg-white text-black font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all">Satın Al</button>
+              { t: "VIP+", p: "₺150", d: "Aylık üyelik avantajları" },
+              { t: "Kozmetik Seti", p: "₺75", d: "Zırh görünümleri" },
+              { t: "1M Altın", p: "₺50", d: "Oyun içi para" }
+            ].map((i, k) => (
+              <div key={k} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all text-center group">
+                <div className="w-16 h-16 bg-blue-600/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform text-2xl">💎</div>
+                <h3 className="font-bold text-xl">{i.t}</h3>
+                <p className="text-gray-400 text-sm my-2">{i.d}</p>
+                <div className="text-blue-400 font-black text-2xl mb-4">{i.p}</div>
+                <button className="w-full py-2 bg-blue-600 hover:bg-blue-500 rounded-lg font-bold transition-colors">İNCELE</button>
               </div>
             ))}
-          </div>
-        );
-      case 'wiki':
-        return (
-          <div className="max-w-2xl mx-auto space-y-4 animate-in slide-in-from-bottom-8 duration-500 text-left">
-            <h2 className="text-4xl font-black mb-8 text-center uppercase tracking-tighter text-white">Sunucu Rehberi</h2>
-            {["Kasaba Kurulumu", "Ekonomi Rehberi", "Irk Yetenekleri"].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-md hover:bg-white/5 cursor-pointer transition-all">
-                <div className="font-bold text-lg text-blue-400">{item}</div>
-                <div className="text-gray-400 text-sm mt-1">Detaylı rehber içeriği yakında burada olacak.</div>
-              </div>
-            ))}
-          </div>
-        );
-      case 'destek':
-        return (
-          <div className="max-w-md mx-auto p-8 rounded-[2.5rem] bg-black/60 border border-white/10 backdrop-blur-xl animate-in fade-in duration-500">
-            <h2 className="text-3xl font-black mb-6 uppercase tracking-tighter text-blue-400">Destek Talebi</h2>
-            <div className="space-y-4 text-left">
-              <input type="text" placeholder="Kullanıcı Adın" className="w-full p-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-blue-600 text-white transition-all" />
-              <textarea placeholder="Sorununu yaz..." rows={4} className="w-full p-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-blue-600 text-white transition-all"></textarea>
-              <button className="w-full py-4 bg-blue-600 font-black rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all text-white">GÖNDER</button>
-            </div>
-          </div>
-        );
-      case 'profil':
-        return (
-          <div className="max-w-md mx-auto p-10 rounded-[3rem] bg-gradient-to-br from-blue-600/20 to-black/80 border border-white/10 backdrop-blur-2xl animate-in zoom-in duration-500 text-center">
-            <div className="relative w-24 h-24 mx-auto mb-6">
-               <div className="absolute inset-0 bg-blue-500 blur-2xl opacity-50 animate-pulse"></div>
-               <div className="relative w-full h-full bg-white text-black rounded-full flex items-center justify-center text-4xl font-black">M</div>
-            </div>
-            <h2 className="text-3xl font-black tracking-tighter uppercase text-white">MELIODAS_ROOT</h2>
-            <p className="text-blue-400 font-bold text-sm tracking-[0.3em] mt-2 mb-8 uppercase">Kurucu</p>
-            <div className="grid grid-cols-2 gap-4">
-               <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
-                  <span className="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Seviye</span>
-                  <span className="text-2xl font-black text-white">99</span>
-               </div>
-               <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
-                  <span className="block text-[10px] text-gray-500 uppercase tracking-widest mb-1">Bakiye</span>
-                  <span className="text-2xl font-black text-white">₺1,250</span>
-               </div>
-            </div>
           </div>
         );
       default:
         return (
-          <div className="space-y-16 animate-in fade-in zoom-in duration-1000">
-            <div className="space-y-4">
-              <h1 className="text-7xl md:text-[120px] leading-[0.8] font-black tracking-[-0.05em] uppercase italic bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-gray-700">
-                ZENTERIA
-              </h1>
-              <p className="text-lg md:text-2xl font-medium tracking-[0.4em] text-gray-400 uppercase">
-                Towny ve Roleplay Deneyimi
-              </p>
+          <div className="space-y-12 animate-in fade-in duration-700">
+            {/* Melonya Stili Hero */}
+            <div className="relative inline-block">
+                <div className="absolute -inset-4 bg-blue-600/20 blur-3xl rounded-full"></div>
+                <h1 className="relative text-6xl md:text-8xl font-black tracking-tighter italic text-white drop-shadow-2xl">
+                  ZENTERIA
+                </h1>
+                <p className="mt-2 text-blue-400 font-bold tracking-[0.5em] text-sm md:text-base">TOWNY & ROLEPLAY</p>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
-               <button 
-                onClick={() => {
-                  navigator.clipboard.writeText("play.zenteria.com");
-                  alert("IP Adresi Kopyalandı!");
-                }}
-                className="relative group px-16 py-6 bg-white text-black font-black text-xl rounded-2xl transition-all duration-500 hover:scale-110 shadow-[0_0_50px_rgba(255,255,255,0.2)] hover:shadow-blue-500/50"
-              >
-                PLAY.ZENTERIA.COM
-                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-              </button>
-              <p className="text-[10px] tracking-[0.4em] text-gray-500 uppercase">Tıkla ve IP'yi Kopyala</p>
+            {/* IP Kopyalama Kartı */}
+            <div className="max-w-xl mx-auto bg-black/40 border border-white/5 backdrop-blur-md p-2 rounded-2xl flex items-center justify-between group hover:border-blue-500/50 transition-all">
+                <div className="px-6 py-3 font-mono font-bold text-blue-400 tracking-wider">PLAY.ZENTERIA.COM</div>
+                <button 
+                  onClick={() => { navigator.clipboard.writeText("play.zenteria.com"); alert("Kopyalandı!"); }}
+                  className="bg-blue-600 hover:bg-blue-500 px-8 py-3 rounded-xl font-black text-sm transition-all active:scale-95"
+                >
+                  KOPYALA
+                </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
-              <div className="p-10 rounded-[2.5rem] bg-black/60 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
-                <h3 className="text-2xl font-black mb-4 uppercase italic group-hover:text-blue-400 transition-colors text-white">Towny</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Kasabanı kur, sınırlarını genişlet ve büyük savaşlara hazırlan.</p>
-              </div>
-              <div className="p-10 rounded-[2.5rem] bg-black/60 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
-                <h3 className="text-2xl font-black mb-4 uppercase italic text-blue-500 group-hover:text-blue-300">Özel Irklar</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Seçtiğin ırka ait büyüleri ve pasif yetenekleri keşfet.</p>
-              </div>
-              <div className="p-10 rounded-[2.5rem] bg-black/60 border border-white/5 backdrop-blur-md hover:border-white/20 transition-all text-left group">
-                <h3 className="text-2xl font-black mb-4 uppercase italic group-hover:text-blue-400 transition-colors text-white">Ekonomi</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Tamamen oyuncu takasına dayalı adil ve dinamik pazar sistemi.</p>
-              </div>
+            {/* Özellik Kartları */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { title: "Kasaba Sistemi", icon: "🏰", desc: "Kendi medeniyetini kur ve yönet." },
+                { title: "Gelişmiş Ekonomi", icon: "⚖️", desc: "Tamamen oyuncu odaklı pazar." },
+                { title: "Özel Görevler", icon: "📜", desc: "Zenteria dünyasını keşfet." }
+              ].map((box, i) => (
+                <div key={i} className="bg-gradient-to-b from-white/10 to-transparent p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all text-left">
+                  <div className="text-4xl mb-4">{box.icon}</div>
+                  <h3 className="text-xl font-bold mb-2">{box.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{box.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         );
@@ -114,37 +75,47 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white p-6 relative flex flex-col items-center overflow-x-hidden">
-      {/* Uzay Arka Planı - Inline Style ile Sabitlendi */}
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-screen animate-pulse"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000')" }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]"></div>
-      </div>
+    <main className="min-h-screen relative flex flex-col items-center">
+      {/* Melonya Tarzı Dinamik Arka Plan */}
+      <div 
+        className="fixed inset-0 -z-10 bg-cover bg-center transition-opacity duration-1000"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000')",
+          opacity: 0.3
+        }}
+      ></div>
+      <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(30,64,175,0.15),_transparent)]"></div>
 
-      <nav className="fixed top-8 flex flex-wrap justify-center gap-2 p-2 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-xl z-50">
-        {['home', 'market', 'wiki', 'destek', 'profil'].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-6 py-3 rounded-xl text-[10px] md:text-xs font-black uppercase tracking-widest transition-all ${
-              activeTab === tab ? 'bg-white text-black' : 'text-gray-400 hover:text-white'
-            }`}
-          >
-            {tab === 'home' ? 'Ana Sayfa' : tab}
-          </button>
-        ))}
+      {/* Melonya Tarzı Üst Menü */}
+      <nav className="w-full max-w-5xl mt-8 px-6 py-4 flex items-center justify-between bg-black/20 backdrop-blur-md border border-white/5 rounded-2xl z-50">
+        <div className="font-black text-xl tracking-tighter italic">ZENTERIA</div>
+        <div className="hidden md:flex gap-8">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setActiveTab(item.id)}
+              className={`text-[11px] font-black tracking-widest transition-colors ${
+                activeTab === item.id ? 'text-blue-500' : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+        <button onClick={() => setActiveTab('profil')} className="bg-white text-black px-5 py-2 rounded-lg font-black text-[11px] hover:bg-blue-600 hover:text-white transition-all">
+          GİRİŞ YAP
+        </button>
       </nav>
 
-      <div className="mt-40 w-full max-w-6xl text-center relative z-10">
+      {/* İçerik Alanı */}
+      <div className="w-full max-w-5xl px-6 mt-24 mb-20 text-center">
         {renderContent()}
       </div>
 
-      <footer className="mt-20 py-10 text-gray-700 text-[10px] tracking-[0.5em] uppercase font-bold border-t border-white/5 w-full text-center">
-        © 2026 Zenteria Ağı • Meliodas_Root
+      <footer className="w-full py-10 border-t border-white/5 bg-black/40 text-center">
+        <p className="text-gray-600 text-[10px] tracking-[0.5em] font-bold uppercase">
+          © 2026 Zenteria Network • Meliodas_Root
+        </p>
       </footer>
     </main>
   );
-}
