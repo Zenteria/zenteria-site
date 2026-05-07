@@ -54,7 +54,7 @@ export default function Home() {
                <div className="absolute inset-0 bg-blue-500 blur-2xl opacity-50 animate-pulse"></div>
                <div className="relative w-full h-full bg-white text-black rounded-full flex items-center justify-center text-4xl font-black">M</div>
             </div>
-            <h2 className="text-3xl font-black tracking-tighter">MELIODAS_ROOT</h2>
+            <h2 className="text-3xl font-black tracking-tighter uppercase">MELIODAS_ROOT</h2>
             <p className="text-blue-400 font-bold text-sm tracking-[0.3em] mt-2 mb-8 uppercase">Kurucu</p>
             <div className="grid grid-cols-2 gap-4">
                <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
@@ -91,6 +91,7 @@ export default function Home() {
                 PLAY.ZENTERIA.COM
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
               </button>
+              <p className="text-[10px] tracking-[0.4em] text-gray-500 uppercase">Tıkla ve IP'yi Kopyala</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
@@ -114,9 +115,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white p-6 font-sans relative flex flex-col items-center overflow-x-hidden">
-      {/* Uzay Arka Planı */}
+      {/* Uzay Arka Planı - Inline Style ile Garantiye Alındı */}
       <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-40 mix-blend-screen animate-[pulse_10s_infinite]"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-screen animate-pulse"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000')" }}
+        ></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,_rgba(37,99,235,0.15),_transparent_50%)]"></div>
       </div>
