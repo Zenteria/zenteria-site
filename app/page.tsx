@@ -38,7 +38,7 @@ export default function Home() {
           <p className="text-xs text-gray-500 uppercase tracking-[0.3em] animate-pulse">Tıkla ve IP'yi Kopyala</p>
         </div>
 
-        {/* Özellikler */}
+        {/* Bento Grid Kartlar */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
           <div className="group p-8 border border-white/5 rounded-[2rem] bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500 text-left">
             <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">Towny</h3>
@@ -61,3 +61,4 @@ export default function Home() {
       </footer>
     </main>
   );
+}
