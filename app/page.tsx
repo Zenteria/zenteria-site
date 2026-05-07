@@ -115,7 +115,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white p-6 relative flex flex-col items-center overflow-x-hidden">
-      {/* Arka Plan Görseli - Doğrudan Style ile bağlandı */}
+      {/* Uzay Arka Planı - Inline Style ile Sabitlendi */}
       <div className="fixed inset-0 pointer-events-none -z-10">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-screen animate-pulse"
